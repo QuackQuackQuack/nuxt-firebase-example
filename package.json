@@ -1,0 +1,18 @@
+{
+  "name": "NuxtWithFirebaseHosting",
+  "author": "Phil",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "cd src && yarn dev",
+    "build": "yarn clean && yarn build:nuxt && yarn copyassets && yarn copystatic",
+    "clean": "rimraf server/nuxt && rimraf client && mkdir client",
+    "copyassets": "cp -R server/nuxt/dist/ client/assets",
+    "copystatic": "cp -R src/static/* client",
+    "build:nuxt": "cd src && yarn build",
+    "deploy": "firebase deploy --debug"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
+}
